@@ -4,8 +4,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon srver.js",
-    "dev":"nodemon server.js"
+    "start":"nodemon srver.js"
   },
   "keywords": [],
   "author": "",
@@ -16,10 +15,6 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "mongoose": "^9.5.0",
-    "pg": "^8.21.0",
-    "sequelize": "^6.37.8"
-  },
-  "devDependencies": {
     "nodemon": "^3.1.14"
   }
 }
