@@ -1,16 +1,18 @@
-const {DataTypes} = require('sequelize');
-const sequelize = require('../database');
+const { DataTypes, UUID, FLOAT } = require("sequelize")
+const sequelize  = require('../database')
+
 const Gym = sequelize.define('Gym',{
-    id:{
+    gym_id:{
         type:DataTypes.UUID,
         defaultValue:DataTypes.UUIDV4,
+        allowNull:false,
         primaryKey:true
     },
-    gym_name:{
-        type:DataTypes.STRING,
-        allowNull: false
+    id:{
+        type:DataTypes.UUID,
+        allowNull:false,
     },
-    owner_name:{
+    name:{
         type:DataTypes.STRING,
         allowNull:false
     },
@@ -18,16 +20,15 @@ const Gym = sequelize.define('Gym',{
         type:DataTypes.STRING,
         allowNull:false,
     },
-    rating:{
-        type:DataTypes.FLOAT,
-        defaultValue:4.0
+    address:{
+        type:DataTypes.STRING,
+        allowNull:false,
     },
-    credit_per_day:{
-        type:DataTypes.INTEGER,
-        allowNull:false
+    Rating:{
+        type:DataTypes.FLOAT,
+        allowNull:false,
+        defaultValue:0.0
     }
-},{
-    timestamps:true
 })
 
 module.exports = Gym;

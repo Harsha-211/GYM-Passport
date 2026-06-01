@@ -1,8 +1,8 @@
-const { DataTypes } = require('sequelize');
+const {DataTypes} = require('sequelize');
 const sequelize = require('../database');
 
-const Transaction = sequelize.define('Transaction',{
-    transaction_id:{
+const CheckIn = sequelize.define('CheckIn',{
+    check_in_id:{
         type:DataTypes.UUID,
         defaultValue:DataTypes.UUIDV4,
         allowNull:false,
@@ -12,14 +12,18 @@ const Transaction = sequelize.define('Transaction',{
         type:DataTypes.UUID,
         allowNull:false,
     },
-    amount:{
-        type:DataTypes.INTEGER,
-        allowNull:false
+    gym_id:{
+        type:DataTypes.UUID,
+        allowNull:false,
     },
-    category:{
-        type:DataTypes.ENUM('topup','payout'),
+    credits_deducted:{
+        type:DataTypes.INTEGER,
+        allowNull:false,
+    },
+    checked_in_time:{
+        type:DataTypes.DATE,
         allowNull:false,
     }
 },{timestamps:true});
 
-module.exports = Transaction;
+module.exports = CheckIn;
